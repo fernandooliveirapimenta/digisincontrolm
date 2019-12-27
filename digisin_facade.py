@@ -1,5 +1,3 @@
-from bisect import bisect_left
-from pathlib import Path
 import boto3
 import os
 from time import sleep
