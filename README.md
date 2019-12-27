@@ -1,5 +1,5 @@
 # Install dependencias
-####pip install -r requirements.txt
+`pip install -r requirements.txt`
 
 #Rodar script
-####python digisin_facade.py
+`python digisin_facade.py`
