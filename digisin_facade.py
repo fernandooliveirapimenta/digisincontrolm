@@ -23,7 +23,6 @@ s3_to_local_map = [
     {'key': '/12', 'pasta_local': '/home/nova/Documents/git/digisincontrolm/files/12'},
     {'key': '/14', 'pasta_local': '/home/nova/Documents/git/digisincontrolm/files/14'}
 ]
-pasta_destino = '/home/nova/Documents/git/digisincontrolm/files'
 
 boto3.setup_default_session(profile_name=profile_name)
 client = boto3.client('batch')
@@ -60,7 +59,7 @@ if __name__ == '__main__':
     start_aws_batch_sync(job1, fila_job1, def_job1)
 
     for map in s3_to_local_map:
-        print(map)
+        print(f'Executando copia do: {map} ')
         sync = f'aws s3 sync s3://{bucket}{map["key"]} {map["pasta_local"]} --profile {profile_name}'
         print(sync)
         os.system(sync)
